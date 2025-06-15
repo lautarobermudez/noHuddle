@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoHuddle - Sitio en Mantenimiento</title>
+    <link rel="icon" href="./Images/NH-Logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            min-height: 100vh;
+            position: relative;
+            font-family: 'Oswald', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Contenedor principal */
+        .main-container {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1rem;
+            text-align: center;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Logo NH */
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            height: 5rem;
+            width: auto;
+            margin: 0 auto;
+            filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contenedor del texto principal */
+        .text-container {
+            max-width: 56rem;
+            position: relative;
+        }
+
+        /* Imagen football en desktop */
+        .football-desktop {
+            display: none;
+            position: absolute;
+            left: -4rem;
+            top: -2rem;
+            height: 6rem;
+            width: auto;
+            z-index: 10;
+            filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15)) drop-shadow(0 0 20px rgba(34, 197, 94, 0.5));
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .football-desktop:hover {
+            transform: scale(1.05);
+        }
+
+        /* Título principal */
+        .main-title {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+
+        /* Contenedor del subtítulo */
+        .subtitle-container {
+            position: relative;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            font-weight: 600;
+            color: #2563eb;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Imagen helmet en desktop */
+        .helmet-desktop {
+            display: none;
+            position: absolute;
+            right: -2rem;
+            top: 50%;
+            transform: translateY(-50%) translateX(2rem);
+            height: 5rem;
+            width: auto;
+            z-index: 10;
+            filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15)) drop-shadow(0 0 20px rgba(34, 197, 94, 0.5));
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .helmet-desktop:hover {
+            transform: translateY(-50%) translateX(2rem) scale(1.05);
+        }
+
+        /* Imágenes para mobile/tablet */
+        .images-mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .mobile-image {
+            height: 5rem;
+            width: auto;
+            filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15)) drop-shadow(0 0 20px rgba(34, 197, 94, 0.5));
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Media queries para tablet */
+        @media (min-width: 768px) {
+            .logo-container {
+                margin-bottom: 3rem;
+            }
+
+            .logo {
+                height: 7rem;
+            }
+
+            .football-desktop {
+                left: -5rem;
+                top: -3rem;
+                height: 8rem;
+            }
+
+            .main-title {
+                font-size: 3.75rem;
+                line-height: 1;
+            }
+
+            .subtitle {
+                font-size: 1.5rem;
+                line-height: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .helmet-desktop {
+                right: -3rem;
+                transform: translateY(-50%) translateX(3rem);
+                height: 7rem;
+            }
+
+            .helmet-desktop:hover {
+                transform: translateY(-50%) translateX(3rem) scale(1.05);
+            }
+
+            .images-mobile {
+                gap: 2rem;
+                margin-top: 1.5rem;
+            }
+
+            .mobile-image {
+                height: 7rem;
+            }
+        }
+
+        /* Media queries para desktop */
+        @media (min-width: 1024px) {
+            .logo {
+                height: 9rem;
+            }
+
+            .football-desktop {
+                left: -6rem;
+                top: -4rem;
+                height: 10rem;
+            }
+
+            .main-title {
+                font-size: 4.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+
+            .helmet-desktop {
+                right: -4rem;
+                transform: translateY(-50%) translateX(4rem);
+                height: 9rem;
+            }
+
+            .helmet-desktop:hover {
+                transform: translateY(-50%) translateX(4rem) scale(1.05);
+            }
+
+            .mobile-image {
+                height: 9rem;
+            }
+        }
+
+        /* Media queries para pantallas grandes */
+        @media (min-width: 1280px) {
+            .football-desktop {
+                display: block;
+            }
+
+            .helmet-desktop {
+                display: block;
+            }
+
+            .images-mobile {
+                display: none;
+            }
+
+            .main-title {
+                font-size: 6rem;
+            }
+
+            .subtitle {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+        }
+
+        /* Ajustes adicionales para evitar overflow */
+        @media (max-width: 1279px) {
+            .football-desktop,
+            .helmet-desktop {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        
+        <!-- Logo NH -->
+        <div class="logo-container">
+            <img src="./Images/NH-Logo.png" alt="NH Logo" class="logo">
+        </div>
+
+        <!-- Contenedor del texto principal -->
+        <div class="text-container">
+            <!-- Football antes del texto principal - solo desktop -->
+            <img src="./Images/football.png" alt="Football" class="football-desktop">
+            
+            <h1 class="main-title">
+                ALGO MEJOR<br>
+                ESTÁ POR VENIR
+            </h1>
+            
+            <div class="subtitle-container">
+                <p class="subtitle">
+                    SITIO EN MANTENIMIENTO
+                </p>
+                
+                <!-- Helmet al lado del texto - solo desktop -->
+                <img src="./Images/Helmet.png" alt="Football Helmet" class="helmet-desktop">
+                
+                <!-- Imágenes debajo del texto para mobile y tablet -->
+                <div class="images-mobile">
+                    <img src="./Images/football.png" alt="Football" class="mobile-image">
+                    <img src="./Images/Helmet.png" alt="Football Helmet" class="mobile-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
